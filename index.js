@@ -57,4 +57,10 @@ client.on("guildMemberRemove", (member) => {
   channel.send({ embeds: [embed] });
 });
 
+const http = require('http');
+http.createServer((req, res) => {
+    res.write("aurora esta brilhando!");
+    res.end();
+}).listen(process.env.PORT || 3000);
+
 client.login(process.env.TOKEN);
